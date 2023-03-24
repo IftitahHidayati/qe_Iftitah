@@ -16,4 +16,4 @@ ___
 ## Output Soal Prioritas 2
 **1. SOAL 1**
 
-<img src="./SS Tugas Prioritas 2 (20)/outputKalkultor.png">
+<img src="./SS Tugas Prioritas 2 (20)/outputKalkulator.png">
