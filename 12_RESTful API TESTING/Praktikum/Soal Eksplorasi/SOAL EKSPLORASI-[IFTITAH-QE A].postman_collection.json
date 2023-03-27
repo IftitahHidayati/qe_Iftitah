@@ -1,0 +1,666 @@
+{
+	"info": {
+		"_postman_id": "3c5466fe-bccb-41d5-972f-4c0cd73b3c2d",
+		"name": "SOAL EKSPLORASI-[IFTITAH-QE A]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20666798"
+	},
+	"item": [
+		{
+			"name": "No1",
+			"item": [
+				{
+					"name": "GET-Positif",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"let resStatus = pm.response.code;\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresponseTime = pm.environment.get(\"responseTime\");\r",
+									"console.log(resTime);\r",
+									"\r",
+									"pm.test(`Response Status Code is 200`,function(){\r",
+									"    pm.response.to.have.status(resStatus);\r",
+									"});\r",
+									"pm.test(`Response Time Less Than ${exresponseTime}`, function(){\r",
+									"    pm.expect(resTime).to.below(Number(exresponseTime));\r",
+									"});\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-Negatif",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"let resStatus = pm.response.code;\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresponseTime = pm.environment.get(\"responseTime\");\r",
+									"console.log(resTime);\r",
+									"\r",
+									"pm.test(`Response Status Code is 100`,function(){\r",
+									"    pm.response.to.have.status(100);\r",
+									"});\r",
+									"pm.test(`Response Time Less Than ${exresponseTime}`, function(){\r",
+									"    pm.expect(resTime).to.below(10);\r",
+									"});\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "No2",
+			"item": [
+				{
+					"name": "POST-Positif",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"let resStatusCode = pm.response.code;\r",
+									"console.log(resStatusCode);\r",
+									"\r",
+									"if (resStatusCode === 201) {\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresponseTime = pm.environment.get(\"responseTime\");\r",
+									"let title = jsonData.title;\r",
+									"let body = jsonData.body;\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(`Response time less than ${exresponseTime}ms`, function(){\r",
+									"pm.expect(resTime).to.below(Number(exresponseTime));\r",
+									"});\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Title is Created\", function () {\r",
+									"    pm.expect(jsonData.title).to.eql(\"Input title\");\r",
+									"});\r",
+									"pm.test(\"Body is Created\", function () {\r",
+									"    pm.expect(jsonData.body).to.eql(\"Input body\");\r",
+									"});\r",
+									"\r",
+									"} else if (resStatusCode !== 201){\r",
+									"pm.test(`fail to create user`);\r",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"userId\": \" \",\r\n        \"title\": \"Input title\",\r\n        \"body\": \"Input body\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Negatif",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"let resStatusCode = pm.response.code;\r",
+									"console.log(resStatusCode);\r",
+									"\r",
+									"if (resStatusCode === 500) {\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresponseTime = pm.environment.get(\"responseTime\");\r",
+									"let title = jsonData.title;\r",
+									"let body = jsonData.body;\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(`Response time less than ${exresponseTime}ms`, function(){\r",
+									"pm.expect(resTime).to.below(Number(exresponseTime));\r",
+									"});\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Title is Created\", function () {\r",
+									"    pm.expect(jsonData.title).to.eql(\"Input title\");\r",
+									"});\r",
+									"pm.test(\"Body is Created\", function () {\r",
+									"    pm.expect(jsonData.body).to.eql(\"Input body\");\r",
+									"});\r",
+									"\r",
+									"} else if (resStatusCode !== 500){\r",
+									"pm.test(`fail to create user`);\r",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"userId\": \" \",\r\n        \"title\": \"Input title\",\r\n        \"body\": \"Input body\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "No3",
+			"item": [
+				{
+					"name": "GET[with ID]-Positif",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"const Id = 1;\r",
+									"let resStatus = pm.response.code;\r",
+									"let resContent = pm.response.headers;\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresponseTime = pm.environment.get(\"responseTime\");\r",
+									"console.log(resTime);\r",
+									"\r",
+									"\r",
+									"pm.test(`Response Status Code is 200`,function(){\r",
+									"    pm.response.to.have.status(resStatus);\r",
+									"});\r",
+									"pm.test(`Response Time Less Than ${exresponseTime}`, function(){\r",
+									"    pm.expect(resTime).to.below(Number(exresponseTime));\r",
+									"});\r",
+									"pm.test(\"Response ID is valid\", function() {\r",
+									"pm.expect(jsonData.id).to.eql(Id);\r",
+									"});\r",
+									"pm.test('response Content-Type header should have application/json', function(){\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.equals('application/json; charset=utf-8')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET[with ID]-Negatif(1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"const Id = 2;\r",
+									"let resStatus = pm.response.code;\r",
+									"let resContent = pm.response.headers;\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresponseTime = pm.environment.get(\"responseTime\");\r",
+									"console.log(resTime);\r",
+									"\r",
+									"\r",
+									"pm.test(`Response Status Code is 200`,function(){\r",
+									"    pm.response.to.have.status(resStatus);\r",
+									"});\r",
+									"pm.test(`Response Time Less Than ${exresponseTime}`, function(){\r",
+									"    pm.expect(resTime).to.below(Number(exresponseTime));\r",
+									"});\r",
+									"pm.test(\"Response ID is valid\", function() {\r",
+									"pm.expect(jsonData.id).to.eql(Id);\r",
+									"});\r",
+									"pm.test('response Content-Type header should have application/json', function(){\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.equals('application/json; charset=utf-8')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET[with ID]-Negatif(2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"const Id = 2;\r",
+									"let resStatus = pm.response.code;\r",
+									"let resContent = pm.response.headers;\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresponseTime = pm.environment.get(\"responseTime\");\r",
+									"console.log(resTime);\r",
+									"\r",
+									"\r",
+									"pm.test(`Response Status Code is 200`,function(){\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"pm.test(`Response Time Less Than ${exresponseTime}`, function(){\r",
+									"    pm.expect(resTime).to.below(10);\r",
+									"});\r",
+									"pm.test(\"Response ID is valid\", function() {\r",
+									"pm.expect(jsonData.id).to.eql(Id);\r",
+									"});\r",
+									"pm.test('response Content-Type header should have application/json', function(){\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.equals('application/json; charset=utf-8')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "No4",
+			"item": [
+				{
+					"name": "PUT-Positif",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"let resStatus = pm.response.code;\r",
+									"let title = jsonData.title;\r",
+									"let body = jsonData.body;\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresTime = pm.environment.get(\"responseTime\");\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(`Response Time Less Than ${exresTime}`, function(){\r",
+									"    pm.expect(resTime).to.below(Number(exresTime));\r",
+									"});\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Title is updated\", function () {\r",
+									"    pm.expect(jsonData.title).to.eql(\"Updated Title\");\r",
+									"});\r",
+									"pm.test(\"Body is updated\", function () {\r",
+									"    pm.expect(jsonData.body).to.eql(\"Updated Body\");\r",
+									"});\r",
+									"pm.test(\"User ID is 1\", function () {\r",
+									"    pm.expect(jsonData.userId).to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Updated Title\",\r\n  \"body\": \"Updated Body\",\r\n  \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT-Negatif(1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"let resStatus = pm.response.code;\r",
+									"let title = jsonData.title;\r",
+									"let body = jsonData.body;\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresTime = pm.environment.get(\"responseTime\");\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(`Response Time Less Than ${exresTime}`, function(){\r",
+									"    pm.expect(resTime).to.below(Number(exresTime));\r",
+									"});\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Title is updated\", function () {\r",
+									"    pm.expect(jsonData.title).to.eql(\"Updated Title\");\r",
+									"});\r",
+									"pm.test(\"Body is updated\", function () {\r",
+									"    pm.expect(jsonData.body).to.eql(\"Updated Body\");\r",
+									"});\r",
+									"pm.test(\"User ID is 1\", function () {\r",
+									"    pm.expect(jsonData.userId).to.eql(2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Updated Title\",\r\n  \"body\": \"Updated Body\",\r\n  \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT-Negatif(2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"let resStatus = pm.response.code;\r",
+									"let title = jsonData.title;\r",
+									"let body = jsonData.body;\r",
+									"let resTime = pm.response.responseTime;\r",
+									"let exresTime = pm.environment.get(\"responseTime\");\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"pm.test(`Response Time Less Than ${exresTime}`, function(){\r",
+									"    pm.expect(resTime).to.below(10);\r",
+									"});\r",
+									"pm.test(\"Response is valid JSON\", function () {\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Title is updated\", function () {\r",
+									"    pm.expect(jsonData.title).to.eql(\"Updated Title\");\r",
+									"});\r",
+									"pm.test(\"Body is updated\", function () {\r",
+									"    pm.expect(jsonData.body).to.eql(\"Updated Body\");\r",
+									"});\r",
+									"pm.test(\"User ID is 1\", function () {\r",
+									"    pm.expect(jsonData.userId).to.eql(2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Updated Title\",\r\n  \"body\": \"Updated Body\",\r\n  \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "No5",
+			"item": [
+				{
+					"name": "DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response has valid data\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql({});\r",
+									"});\r",
+									"\r",
+									"pm.sendRequest({\r",
+									"    url: 'https://jsonplaceholder.typicode.com/posts/1',\r",
+									"    method: 'DELETE',\r",
+									"    headers: {\r",
+									"        'Content-Type': 'application/json'\r",
+									"    }\r",
+									"}, function (err, res) {\r",
+									"    if (err) {\r",
+									"        console.log(err);\r",
+									"    }\r",
+									"    else {\r",
+									"        console.log(res.json());\r",
+									"    }\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

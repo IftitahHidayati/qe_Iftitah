@@ -1,0 +1,68 @@
+"ID","Title","Assigned To","Automation Type","Case ID","Comment","Defects","Elapsed","Estimate","Expected Result","Forecast","Goals","In Progress","Mission","Plan","Plan ID","Preconditions","Priority","References","Run","Run Configuration","Run ID","Section","Section Depth","Section Description","Section Hierarchy","Status","Steps","Steps","Steps","Steps (Actual Result)","Steps (Additional Info)","Steps (Expected Result)","Steps (Expected Result)","Steps (References)","Steps (Shared step ID)","Steps (Status)","Steps (Step)","Steps (Step)","Template","Tested By","Tested On","Type","Version"
+"T1","Verify success using GET method to get all post data","Iftitah Hidayati"," None","C1","","","","","Response status code 200 OK, response time less than 1000, and format data JSON.","","","","","","","1. User already access postman 
+2. User create environment with variable base URL and Response Time    
+3. User create new request with GET method           
+4. User input endpoint URL in the URL request section.","Medium","","Test Run 3/22/2023","","R1","POSITIF[GET-No1]","0","","POSITIF[GET-No1]","Passed","1. User create script test for testing response status code, response time and response data format JSON.          
+2.user click send for send request method GET ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:12 AM","Functional",""
+"T3","Verify success using GET method to get all post data, if user create incorrect status code, and response time script test","Iftitah Hidayati"," None","C2","","","","","Response status code error, response time error , and format data JSON.","","","","","","","1. User already access postman    
+2. User create environment with incorrect variable base URL and Response Time                      
+3. User create new request with GET method                     
+4. User input endpoint URL in the URL request section.","Medium","","Test Run 3/22/2023","","R1","NEGATIF[Get-No1]","0","","NEGATIF[Get-No1]","Passed","1. User create incorrect status code, and response time script test for testing response status code, response time and response data format JSON.          
+2.user click send for send request method GET ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:14 AM","Functional",""
+"T5","Verify success using POST method to create a new data post.","Iftitah Hidayati"," None","C3","","","","","Response status code 201 Created, response time less than 1000, format data JSON, response title and body created. ","","","","","","","1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with POST method                     
+4. User input endpoint URL in the URL request section.  ","High","","Test Run 3/22/2023","","R1","POSITIF[Post-No2]","0","","POSITIF[Post-No2]","Passed","1. user input new data post in body with raw and data format using JSON.                    
+2. User create script test for testing response status code, response time, response data format JSON, response created title and body.       
+3. User click send for send request method POST. ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:29 AM","Functional",""
+"T7","Verify success using POST method to create a new data post, if user create incorrect status code script test for testing response status code.","Iftitah Hidayati"," None","C4","","","","","Response fail to create user","","","","","","","1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with POST method
+4. User input endpoint URL in the URL request section.  ","High","","Test Run 3/22/2023","","R1","NEGATIF[Post-No2]","0","","NEGATIF[Post-No2]","Passed","1. user input new data post in body with raw and data format using JSON.                    
+2. User create incorrect  status code script test for testing response status code         
+3. User create script test for testing response time, response data format JSON, response created title and body.                  
+4. User click send for send request method POST. ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:31 AM","Functional",""
+"T9","Verify success using GET method to get all post data by ID.","Iftitah Hidayati"," None","C5","","","","","Response status code 200 OK, response time less than 1000, response ID valid and format data JSON.","","","","","","","1. User already access postman                
+2. User create environment with variable base URL and Response Time                               
+3. User create new request with GET method                     
+4. User input endpoint URL in the URL request section.","High","","Test Run 3/22/2023","","R1","POSITIF[Get(with ID) - No3]","0","","POSITIF[Get(with ID) - No3]","Passed","1. User create script test for testing response status code, response time, response ID number valid and response data format JSON.          
+2.user click send for send request method GET ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:33 AM","Functional",""
+"T11","Verify success using GET method to get all post data, if user create incorrect  ID number.","Iftitah Hidayati"," None","C6","","","","","Response status code 200 OK, response time less than 1000, response ID error and format data JSON.","","","","","","","1. User already access postman                
+2. User create environment with variable base URL and Response Time                               
+3. User create new request with GET method                     
+4. User input endpoint URL in the URL request section.","Medium","","Test Run 3/22/2023","","R1","NEGATIF[Get(with ID) - No3]","0","","NEGATIF[Get(with ID) - No3]","Passed","1. User create script test for testing response status code, response time,and response data format JSON.                            
+2. User create incorrect ID in code script test for testing  response ID number         
+3.user click send for send request method GET ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:33 AM","Functional",""
+"T13","Verify success using GET method to get all post data, if user create incorrect, status code, response time and ID number.","Iftitah Hidayati"," None","C7","","","","","Response status code error, response time error, response ID error and format data JSON.","","","","","","","1. User already access postman                
+2. User create environment with variable base URL and Response Time                               
+3. User create new request with GET method                     
+4. User input endpoint URL in the URL request section.","Medium","","Test Run 3/22/2023","","R1","NEGATIF[Get(with ID) - No3]","0","","NEGATIF[Get(with ID) - No3]","Passed","1. User create incorrect, status code, response time, ID number script test for testing response status code, response time,and response data format JSON.                                     
+2.user click send for send request method GET ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:34 AM","Functional",""
+"T15","Verify success using  PUT method to modify post data based on ID","Iftitah Hidayati"," None","C8","","","","","Response status code 200 OK, response time less than 1000, format data JSON, response title updated, response body updated and response user ID  is 1. ","","","","","","","1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with PUT method                     
+4. User input endpoint URL in the URL request section.  ","High","","Test Run 3/22/2023","","R1","POSITIF[Put(with ID) - No4]","0","","POSITIF[Put(with ID) - No4]","Passed","1. user input new data post for modify data  in body with raw and data format using JSON. 
+2. User create script test for testing response status code, response time, response data format JSON, response title , response body and response user ID.                       
+3. User click send for send request method PUT. ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:35 AM","Functional",""
+"T17","Verify success using  PUT method to modify post data based on ID if user input incorrect ID.","Iftitah Hidayati"," None","C9","","","","","Response status code 200 OK, response time less than 1000, format data JSON, response title updated, response body updated and response user ID  error.","","","","","","","1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with PUT method                     
+4. User input endpoint URL in the URL request section.  ","High","","Test Run 3/22/2023","","R1","NEGATIF[Put(with ID) - No4]","0","","NEGATIF[Put(with ID) - No4]","Passed","1. user input new data post for modify data  in body with raw and data format using JSON.                    
+2. User create script test for testing response status code, response time, response data format JSON, response title , response body.                     
+3. User create incorrect ID number script test for response testing ID.                    
+4. User click send for send request method PUT. ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:36 AM","Functional",""
+"T19","Verify success using  PUT method to modify post data based on ID if user input incorrect status code, response time and ID","Iftitah Hidayati"," None","C10","","","","","Response status code error, response time error, format data JSON, response title updated, response body updated and response user ID  error.","","","","","","","1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with PUT method                     
+4. User input endpoint URL in the URL request section.  ","High","","Test Run 3/22/2023","","R1","NEGATIF[Put(with ID) - No4]","0","","NEGATIF[Put(with ID) - No4]","Passed","1. user input new data post for modify data  in body with raw and data format using JSON.                    
+2. User create incorrect status code, renponse time, ID script test for testing response status code, response time, response data format JSON, response title , response body and response ID.                           
+3. User click send for send request method PUT. ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:36 AM","Functional",""
+"T21","Verify success using DELETE method to deleting data posts by ID.","Iftitah Hidayati"," None","C11","","","","","Response code 200 OK and response data valid. ","","","","","","","1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with DELETE method                     
+4. User input endpoint URL in the URL request section.  ","High","","Test Run 3/22/2023","","R1","POSITIF[Delete-No5]","0","","POSITIF[Delete-No5]","Passed","1. User create script test for testing response status code and response valid data                           
+2. User create code request DELETE method                      
+3.user click send for send request method DELETE ","","","","","","","","","","","","Test Case (Text)","Iftitah Hidayati","3/27/2023 2:08 AM","Functional",""
+
+
+

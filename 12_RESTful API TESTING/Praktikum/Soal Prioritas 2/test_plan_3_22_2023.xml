@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plan>
+	<id>R2</id>
+	<name>Test Plan 3/22/2023</name>
+	<description></description>
+	<createdon>2023-03-27T01:20:27Z</createdon>
+		<completed>false</completed>
+		<milestone>RESTful API</milestone>
+	<stats>
+										<passed>
+			<percent>100</percent>
+			<count>11</count>
+		</passed>
+											<blocked>
+			<percent>0</percent>
+			<count>0</count>
+		</blocked>
+											<untested>
+			<percent>0</percent>
+			<count>0</count>
+		</untested>
+											<retest>
+			<percent>0</percent>
+			<count>0</count>
+		</retest>
+											<failed>
+			<percent>0</percent>
+			<count>0</count>
+		</failed>
+																																																				</stats>	<runs>
+			<run>
+	<id>R3</id>
+	<name>Test Run 3/22/2023</name>
+	<description></description>
+	<config></config>
+	<createdon>2023-03-27T01:20:27Z</createdon>
+		<completed>false</completed>
+		<milestone>RESTful API</milestone>
+	<stats>
+										<passed>
+			<percent>100</percent>
+			<count>11</count>
+		</passed>
+											<blocked>
+			<percent>0</percent>
+			<count>0</count>
+		</blocked>
+											<untested>
+			<percent>0</percent>
+			<count>0</count>
+		</untested>
+											<retest>
+			<percent>0</percent>
+			<count>0</count>
+		</retest>
+											<failed>
+			<percent>0</percent>
+			<count>0</count>
+		</failed>
+																																																				</stats>	<sections>
+		<section>
+		<name>POSITIF[GET-No1]</name>
+		<description></description>
+						<tests>
+						            																					<test>
+				<id>T2</id>
+				<title>Verify success using GET method to get all post data</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman 
+2. User create environment with variable base URL and Response Time    
+3. User create new request with GET method           
+4. User input endpoint URL in the URL request section.</preconds>
+															<steps>1. User create script test for testing response status code, response time and response data format JSON.          
+2.user click send for send request method GET </steps>
+															<expected>Response status code 200 OK, response time less than 1000, and format data JSON.</expected>
+									</custom>
+												<caseid>C1</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+								</tests>
+							</section>
+		<section>
+		<name>NEGATIF[Get-No1]</name>
+		<description></description>
+						<tests>
+						            																					<test>
+				<id>T4</id>
+				<title>Verify success using GET method to get all post data, if user create incorrect status code, and response time script test</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman    
+2. User create environment with incorrect variable base URL and Response Time                      
+3. User create new request with GET method                     
+4. User input endpoint URL in the URL request section.</preconds>
+															<steps>1. User create incorrect status code, and response time script test for testing response status code, response time and response data format JSON.          
+2.user click send for send request method GET </steps>
+															<expected>Response status code error, response time error , and format data JSON.</expected>
+									</custom>
+												<caseid>C2</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+								</tests>
+							</section>
+		<section>
+		<name>POSITIF[Post-No2]</name>
+		<description></description>
+						<tests>
+						            																					<test>
+				<id>T6</id>
+				<title>Verify success using POST method to create a new data post.</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with POST method                     
+4. User input endpoint URL in the URL request section.  </preconds>
+															<steps>1. user input new data post in body with raw and data format using JSON.                    
+2. User create script test for testing response status code, response time, response data format JSON, response created title and body.       
+3. User click send for send request method POST. </steps>
+															<expected>Response status code 201 Created, response time less than 1000, format data JSON, response title and body created. </expected>
+									</custom>
+												<caseid>C3</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+								</tests>
+							</section>
+		<section>
+		<name>NEGATIF[Post-No2]</name>
+		<description></description>
+						<tests>
+						            																					<test>
+				<id>T8</id>
+				<title>Verify success using POST method to create a new data post, if user create incorrect status code script test for testing response status code.</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with POST method
+4. User input endpoint URL in the URL request section.  </preconds>
+															<steps>1. user input new data post in body with raw and data format using JSON.                    
+2. User create incorrect  status code script test for testing response status code         
+3. User create script test for testing response time, response data format JSON, response created title and body.                  
+4. User click send for send request method POST. </steps>
+															<expected>Response fail to create user</expected>
+									</custom>
+												<caseid>C4</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+								</tests>
+							</section>
+		<section>
+		<name>POSITIF[Get(with ID) - No3]</name>
+		<description></description>
+						<tests>
+						            																					<test>
+				<id>T10</id>
+				<title>Verify success using GET method to get all post data by ID.</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman                
+2. User create environment with variable base URL and Response Time                               
+3. User create new request with GET method                     
+4. User input endpoint URL in the URL request section.</preconds>
+															<steps>1. User create script test for testing response status code, response time, response ID number valid and response data format JSON.          
+2.user click send for send request method GET </steps>
+															<expected>Response status code 200 OK, response time less than 1000, response ID valid and format data JSON.</expected>
+									</custom>
+												<caseid>C5</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+								</tests>
+							</section>
+		<section>
+		<name>NEGATIF[Get(with ID) - No3]</name>
+		<description></description>
+						<tests>
+						            																					<test>
+				<id>T12</id>
+				<title>Verify success using GET method to get all post data, if user create incorrect  ID number.</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman                
+2. User create environment with variable base URL and Response Time                               
+3. User create new request with GET method                     
+4. User input endpoint URL in the URL request section.</preconds>
+															<steps>1. User create script test for testing response status code, response time,and response data format JSON.                            
+2. User create incorrect ID in code script test for testing  response ID number         
+3.user click send for send request method GET </steps>
+															<expected>Response status code 200 OK, response time less than 1000, response ID error and format data JSON.</expected>
+									</custom>
+												<caseid>C6</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+									            																					<test>
+				<id>T14</id>
+				<title>Verify success using GET method to get all post data, if user create incorrect, status code, response time and ID number.</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman                
+2. User create environment with variable base URL and Response Time                               
+3. User create new request with GET method                     
+4. User input endpoint URL in the URL request section.</preconds>
+															<steps>1. User create incorrect, status code, response time, ID number script test for testing response status code, response time,and response data format JSON.                                     
+2.user click send for send request method GET </steps>
+															<expected>Response status code error, response time error, response ID error and format data JSON.</expected>
+									</custom>
+												<caseid>C7</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+								</tests>
+							</section>
+		<section>
+		<name>POSITIF[Put(with ID) - No4]</name>
+		<description></description>
+						<tests>
+						            																					<test>
+				<id>T16</id>
+				<title>Verify success using  PUT method to modify post data based on ID</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with PUT method                     
+4. User input endpoint URL in the URL request section.  </preconds>
+															<steps>1. user input new data post for modify data  in body with raw and data format using JSON. 
+2. User create script test for testing response status code, response time, response data format JSON, response title , response body and response user ID.                       
+3. User click send for send request method PUT. </steps>
+															<expected>Response status code 200 OK, response time less than 1000, format data JSON, response title updated, response body updated and response user ID  is 1. </expected>
+									</custom>
+												<caseid>C8</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+								</tests>
+							</section>
+		<section>
+		<name>NEGATIF[Put(with ID) - No4]</name>
+		<description></description>
+						<tests>
+						            																					<test>
+				<id>T18</id>
+				<title>Verify success using  PUT method to modify post data based on ID if user input incorrect ID.</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with PUT method                     
+4. User input endpoint URL in the URL request section.  </preconds>
+															<steps>1. user input new data post for modify data  in body with raw and data format using JSON.                    
+2. User create script test for testing response status code, response time, response data format JSON, response title , response body.                     
+3. User create incorrect ID number script test for response testing ID.                    
+4. User click send for send request method PUT. </steps>
+															<expected>Response status code 200 OK, response time less than 1000, format data JSON, response title updated, response body updated and response user ID  error.</expected>
+									</custom>
+												<caseid>C9</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+									            																					<test>
+				<id>T20</id>
+				<title>Verify success using  PUT method to modify post data based on ID if user input incorrect status code, response time and ID</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with PUT method                     
+4. User input endpoint URL in the URL request section.  </preconds>
+															<steps>1. user input new data post for modify data  in body with raw and data format using JSON.                    
+2. User create incorrect status code, renponse time, ID script test for testing response status code, response time, response data format JSON, response title , response body and response ID.                           
+3. User click send for send request method PUT. </steps>
+															<expected>Response status code error, response time error, format data JSON, response title updated, response body updated and response user ID  error.</expected>
+									</custom>
+												<caseid>C10</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+								</tests>
+							</section>
+		<section>
+		<name>POSITIF[Delete-No5]</name>
+		<description></description>
+						<tests>
+						            																					<test>
+				<id>T22</id>
+				<title>Verify success using DELETE method to deleting data posts by ID.</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>1. User already access postman    
+2. User create environment with variable base URL and Response Time                      
+3. User create new request with DELETE method                     
+4. User input endpoint URL in the URL request section.  </preconds>
+															<steps>1. User create script test for testing response status code and response valid data                           
+2. User create code request DELETE method                      
+3.user click send for send request method DELETE </steps>
+															<expected>Response code 200 OK and response data valid. </expected>
+									</custom>
+												<caseid>C11</caseid>
+																<status>Passed</status>
+																<assignedto>Iftitah Hidayati</assignedto>
+																<inprogress></inprogress>
+																																																																		<changes>
+									</changes>
+			</test>
+								</tests>
+							</section>
+</sections>
+</run>		</runs>
+</plan>
