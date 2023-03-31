@@ -1,1 +1,0 @@
-## nb : tidak ada screenshot praktikum, hanya tugas materi yang dikumpulkan dalam bentuk google docs
