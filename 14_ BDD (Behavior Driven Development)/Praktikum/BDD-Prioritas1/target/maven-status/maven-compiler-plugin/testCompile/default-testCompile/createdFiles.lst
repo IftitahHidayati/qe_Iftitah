@@ -1,0 +1,13 @@
+starter\stepdefinitions\CreatePostSteps.class
+starter\login\Login.class
+starter\stepdefinitions\LoginSteps.class
+starter\updateprofile\updateProfile.class
+starter\readmyconnection\ReadMyConnection.class
+starter\stepdefinitions\DeleteSteps.class
+starter\register\Register.class
+starter\stepdefinitions\UpdateProfileSteps.class
+CucumberTestSuite.class
+starter\createpost\createPost.class
+starter\stepdefinitions\ReadMyConnectionSteps.class
+starter\stepdefinitions\RegisterSteps.class
+starter\delete\Delete.class
