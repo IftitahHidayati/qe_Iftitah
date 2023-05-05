@@ -1,0 +1,6 @@
+starter\CucumberTestSuite.class
+starter\login\Product.class
+starter\login\Home.class
+starter\login\Login.class
+starter\login\Payment.class
+starter\stepdefinitions\LoginSteps.class

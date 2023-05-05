@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="login" skipped="0" tests="3" time="14.96" timestamp="2023-05-05 07:20:44"><testcase name="As user i have be able to success login"/><testcase name="As user, I have beed locked out"/></testsuite>

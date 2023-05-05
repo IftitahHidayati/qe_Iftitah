@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"login sepulsa","as a user i can login","SUCCESS","2023-05-05T12:03:22.5561313+07:00[Asia/Bangkok]","0.0","11.16"
+"login sepulsa","As a user I can't login successfully","SUCCESS","2023-05-05T12:03:34.1560726+07:00[Asia/Bangkok]","0.0","9.98"
+"login sepulsa","as a user I can do payment","ERROR","2023-05-05T12:03:44.3397366+07:00[Asia/Bangkok]","0.0","12.9"
+"login sepulsa","as a user I can buy the product","FAILURE","2023-05-05T12:03:57.5157827+07:00[Asia/Bangkok]","0.0","15.05"
