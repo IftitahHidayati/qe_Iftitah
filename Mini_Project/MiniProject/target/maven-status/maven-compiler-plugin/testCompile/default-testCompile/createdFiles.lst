@@ -1,0 +1,15 @@
+starter\altaShop\RegisterPage.class
+starter\stepdefinitions\CategorySteps.class
+starter\altaShop\BuyProductPage.class
+starter\altaShop\ProductDetailPage.class
+starter\altaShop\Category.class
+starter\altaShop\Home.class
+starter\altaShop\Register.class
+starter\stepdefinitions\AuthSteps.class
+starter\altaShop\TransactionPage.class
+starter\CucumberTestSuite.class
+starter\stepdefinitions\UserSteps.class
+starter\altaShop\PaymentPage.class
+starter\altaShop\SelectCategoryPage.class
+starter\altaShop\LoginPage.class
+starter\altaShop\Login.class
